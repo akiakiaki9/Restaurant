@@ -1,0 +1,56 @@
+/* Основной контейнер лоадера */
+.loadermain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    z-index: 9999;
+}
+
+/* Фон с анимацией */
+.loadermain-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9c7536;
+    animation: backgroundAnim 3s infinite alternate;
+    z-index: -1;
+}
+
+/* Спиннер */
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    border-top: 10px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Анимация спиннера */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Анимация фона */
+@keyframes backgroundAnim {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}

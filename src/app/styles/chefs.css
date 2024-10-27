@@ -1,0 +1,69 @@
+.chefs {
+    padding: 20px 10px;
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.chefs h1 {
+    text-align: center;
+    font-size: 300%;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+}
+
+.chefs-blok {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.chefs-blok__section {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chefs-blok__section img {
+    width: 270px;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.chefs-blok__section img:hover {
+    transform: scale(1.1);
+}
+
+.chefs__title {
+    margin-bottom: 5px;
+    font-size: 120%;
+    z-index: 2;
+}
+
+.chefs__category {
+    font-size: 90%;
+}
+
+@media (max-width: 926px) {
+    .chefs-blok {
+        flex-wrap: wrap;
+    }
+    .chefs-blok__section img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 750px) {
+    .chefs h1 {
+        font-size: 220%;
+    }
+}
+
+@media (max-width: 467px) {
+    .chefs-blok__section img {
+        height: 200px;
+        object-fit: cover;
+    }
+}

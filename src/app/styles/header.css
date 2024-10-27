@@ -1,0 +1,91 @@
+.header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    padding-left: 100px;
+    align-items: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-color: #00000097;
+    color: #fff;
+}
+
+.header__h1-1, .header__h1-2 {
+    font-size: 330%;
+}
+
+.header__h1-2 {
+    color: var(--main-color);
+}
+
+.header__h1-3 {
+    font-family: "Playfair Display", serif;
+}
+
+.header-blok__container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.header-blok__container a button {
+    width: 200px;
+    font-size: 110%;
+    padding: 7px 0;
+    border-radius: 20px;
+    border: 2px solid var(--main-color);
+    transition: .5s;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__button-1 {
+    background-color: var(--main-color);
+}
+
+.header__button-2 {
+    background: none;
+}
+
+.header-blok__container button:hover {
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px 5px var(--main-color);
+
+}
+
+@media (max-width: 640px) {
+    .header {
+        padding-left: 0;
+        text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: #000000ca;
+    }
+    .header-blok__container {
+        justify-content: center;
+    }
+    .header__h1-1, .header__h1-2 {
+        font-size: 290%;
+    }
+    .header-blok__container a button {
+        width: 150px;
+    }
+    .header__h1-3 {
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 530px) {
+    .header__h1-1, .header__h1-2 {
+        font-size: 250%;
+    }
+    .header__h1-3 {
+        font-size: 120%;
+    }
+}

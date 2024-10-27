@@ -1,0 +1,47 @@
+.contactlink {
+    background-image: url('/images/contact-link.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #000000bd;
+    background-attachment: fixed;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.contactlink-blok {
+    text-align: center;
+}
+
+.contactlink-blok h1 {
+    margin-bottom: 20px;
+}
+
+.contactlink-blok button {
+    font-size: 110%;
+    padding: 12px 30px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.contactlink-blok button:hover {
+    opacity: .7;
+}
+
+@media (max-width: 700px) {
+
+    .contactlink {
+        height: 40vh;
+    }
+
+    .contactlink-blok h1 {
+        font-size: 190%;
+    }
+}

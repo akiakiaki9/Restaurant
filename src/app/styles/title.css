@@ -1,0 +1,70 @@
+.pagename {
+    background-image: url('/images/title-bg.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-color: #000000c8;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.pagename-blok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.pagename-blok h1 {
+    font-size: 280%;
+}
+
+.pagename-blok h2 {
+    text-align: center;
+}
+
+.pagename-parent {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.pagename-parent:hover,
+.pagename-child:hover {
+    text-decoration: underline;
+}
+
+.pagename-drop {
+    margin: 0 5px;
+}
+
+@media (max-width: 480px) {
+    .pagename {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.366), rgba(0, 0, 0, 0.07)), url('/images/title-bg.jpg');
+        background-position: bottom;
+        background-attachment: fixed;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+}
+
+@media (max-width: 435px) {
+    .pagename-blok h1 {
+        font-size: 170%;
+    }
+}
+
+@media (max-width: 350px) {
+    .pagename-parent {
+        font-size: 90%;
+    }
+
+    .pagename-child {
+        font-size: 90%;
+    }
+
+    .pagename-drop {
+        font-size: 90%;
+    }
+}

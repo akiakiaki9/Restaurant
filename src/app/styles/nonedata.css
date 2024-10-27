@@ -1,0 +1,15 @@
+.nonedata {
+    height: 50vh;
+    background-color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.nonedata-blok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

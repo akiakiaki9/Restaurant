@@ -1,0 +1,95 @@
+.footer {
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.footer-footer {
+    font-family: "Open Sans", sans-serif;
+    padding: 20px 10px;
+    text-align: center;
+    background-color: #000;
+}
+
+.footer-blok {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 10px;
+    border: none;
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-blok__section__b {
+   margin-bottom: 20px;
+}
+
+.footer-blok__section-1__p1 {
+    font-family: "Playfair Display", serif;
+    font-size: 150%;
+}
+
+.footer-blok__section-1__p2 {
+    font-family: "Playfair Display", serif;
+    max-width: 500px;
+}
+
+.footer-blok__section-2 {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.footer-blok__section-3 {
+    font-family: "Open Sans", sans-serif;
+}
+
+.footer-blok__section-3__p {
+    font-size: 85%;
+    max-width: 300px;
+}
+
+.footer-blok__section-container {
+
+}
+
+.footer-blok__section-container__icon {
+    color: var(--main-color);
+    font-size: 120%;
+}
+
+.footer-blok__section-container b {
+    font-family: "Playfair Display", serif;
+}
+
+.footer-blok__section-container__link {
+    color: #fff;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.footer-blok__section-container__link:hover {
+    color: var(--main-color);
+}
+
+.footer-blok__section-container div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 911px) {
+    .footer-blok__section-1__p1, .footer-blok__section-1__p2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 410px) {
+    .footer-blok__section-2 {
+        gap: 15px;
+    }
+}

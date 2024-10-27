@@ -1,0 +1,75 @@
+.services {
+    padding: 40px 0;
+    background-image: url('/images/services-bg.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #000000ea;
+    color: #fff;
+}
+
+.services-blok {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.services-blok.reverse {
+    flex-direction: row-reverse; /* Меняем направление для второго блока */
+}
+
+.services-blok__section {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.services-blok__section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.services__title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.services__subtitle {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.services-blok__section__container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.services-blok__section__container p {
+    color: #bdbdbd;
+}
+
+.services__icon {
+    color: var(--main-color);
+}
+
+@media (max-width: 1050px) {
+    .services-blok {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-blok__section img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .services-blok.reverse {
+        flex-direction: column; /* Для мобильных устройств блоки не меняем местами */
+    }
+}

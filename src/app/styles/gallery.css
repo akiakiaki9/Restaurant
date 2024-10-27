@@ -1,0 +1,144 @@
+.gallery {
+    display: flex;
+    margin-left: -20px;
+    width: auto;
+    padding: 20px 10px;
+    background-color: var(--dark-color);
+}
+
+.gallery-column {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+
+.gallery-item {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.gallery-image {
+    width: 500px;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Оверлей для карусели */
+.carousel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    font-size: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+    transition: 0.3s;
+}
+
+.download-button {
+    position: absolute;
+    top: 32px;
+    right: 90px;
+    font-size: 25px;
+    color: #e1e1e1;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.carousel-image {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Счетчик слайдов */
+.slide-counter {
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Кнопки для карусели */
+.swiper-button-prev,
+.swiper-button-next {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.swiper-button-prev {
+    left: 20px;
+}
+
+.swiper-button-next {
+    right: 20px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: #fff;
+}
+
+/* Для мобильных устройств уменьшаем размер кнопок */
+@media (max-width: 620px) {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-image {
+        width: 80%;
+        height: 80%;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-button {
+        top: 20px;
+        right: 40px;
+    }
+
+    .download-button {
+        top: 32px;
+        right: 70px;
+    }
+}

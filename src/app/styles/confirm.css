@@ -1,0 +1,10 @@
+.confirmation-message {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-message-blok {
+    text-align: center;
+}

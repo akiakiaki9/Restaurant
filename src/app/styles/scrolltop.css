@@ -1,0 +1,36 @@
+.scroll-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #ffffff;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+    /* По умолчанию кнопка скрыта */
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--main-color);
+    z-index: 15;
+    transition: .3s;
+}
+
+.scroll-to-top-button:hover {
+    opacity: .8;
+}
+
+.scroll-to-top-button.show {
+    display: flex;
+    /* Показываем кнопку при условии, что isVisible === true */
+}
+
+@media (max-width: 425px) {
+    .scroll-to-top-button {
+        right: 7px;
+        bottom: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}

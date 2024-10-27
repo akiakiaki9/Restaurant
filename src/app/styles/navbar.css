@@ -1,0 +1,192 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0000005a;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 10;
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 10px 67px -6px rgba(0, 0, 0, 0.75);
+    background-color: #000;
+}
+
+.navbar-brand {
+    width: 80px;
+    height: 35px;
+}
+
+.brand h1 {
+    margin: 0;
+    color: #fff; /* Цвет бренда */
+    font-family: 'Arial', sans-serif; /* Шрифт бренда */
+}
+
+.menu-icon {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.menu-links {
+    display: flex;
+    justify-content: center; /* Центрируем элементы */
+    align-items: center; /* Выравниваем по вертикали */
+    gap: 20px; /* Пробелы между элементами */
+}
+
+.menu-links.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-links a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.menu-links a:hover {
+    color: var(--main-color); /* Цвет при наведении */
+}
+
+.close-icon {
+    display: none;
+}
+
+.overlay {
+    display: none;
+}
+
+.book-button {
+    padding: 10px 20px;
+    background-color: var(--dark-color);
+    border: 1px solid var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .5s;
+    font-size: 105%;
+}
+
+.book-button:hover {
+    background-color: var(--main-color);
+}
+
+@media (max-width: 930px) {
+    .menu-links {
+        gap: 5px; /* Пробелы между элементами */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding: 2rem;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+  
+    .menu-links.active {
+        transform: translateX(0);
+    }
+
+    .close-icon {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .menu-icon.hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        transform: none;
+        transition: none;
+        padding: 0;
+        box-sizing: border-box;
+        z-index: auto;
+    }
+
+    .menu-links a {
+        font-size: 1rem;
+        margin: 0 1rem;
+        color: #fff;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .menu-links a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: var(--main-color);
+        bottom: -4px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-links a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .close-icon {
+        display: none;
+    }
+
+    .overlay {
+        display: none;
+    }
+}

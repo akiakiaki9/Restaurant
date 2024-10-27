@@ -1,0 +1,74 @@
+.testimonials {
+    padding: 20px 20px 50px 20px;
+    color: #fff;
+    background-color: var(--dark-color);
+}
+
+.testimonials-blok__section {
+    padding: 20px 20px 50px 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--dark-color);
+    border: 1px solid white;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: grab;
+    margin: 10px;
+    /* Отступы вокруг секции */
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.testimonials__title {
+    font-size: 200%;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 5px;
+}
+
+.testimonials__description {
+    font-size: 90%;
+    max-width: 300px;
+    min-height: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.custom-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #bbb;
+    /* Неактивный цвет дотов */
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-dot.active {
+    background-color: var(--main-color);
+    /* Цвет активного дота */
+}
+
+.testimonials .react-multi-carousel-dot-list {
+    position: absolute;
+    bottom: 17px;
+    /* Как вы хотите */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 520px) {
+    .testimonials-blok__section {
+        border: none;
+    }
+}

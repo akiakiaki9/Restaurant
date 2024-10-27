@@ -1,0 +1,117 @@
+.contacts {
+    width: 100%;
+    color: #fff;
+    background-color: var(--dark-color);
+}
+
+.contacts-blok {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contacts-blok__section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contacts-blok__section-1 {
+    padding: 40px 10px 45px 10px;
+    margin-bottom: 45px;
+}
+
+.contacts-blok__section__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-blok__section__container-part {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    align-items: center;
+}
+
+.contacts-blok__section__container-part p {
+    font-size: 130%;
+}
+
+.contacts-blok__section__container-part p a {
+    text-decoration: none;
+    color: #fff;
+    transition: .5s;
+}
+
+.contacts-blok__section__container-part p a:hover {
+    opacity: .8;
+}
+
+.contacts-footer {
+    padding: 10px 0;
+}
+
+.contacts-footer h2 {
+    margin-bottom: 20px;
+}
+
+.contacts-footer__section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contacts__map {
+    width: 100%;
+}
+
+.contacts__icon {
+    font-size: 250%;
+    color: var(--main-color);
+}
+
+.contacts-footer__icon {
+    font-size: 400%;
+    color: #fff;
+    transition: .5s;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 0 15px 2px var(--main-color);
+}
+
+.contacts-footer__icon:hover {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 854px) {
+    .contacts-sar h1 {
+        font-size: 200%;
+    }
+    .contacts-blok__section-1 {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .contacts-footer {
+        margin-top: 20px;
+    }
+    .contacts-footer h2 {
+        display: none;
+    }
+    .contacts-blok__section__container {
+        gap: 10px;
+    }
+    .contacts-blok__section__container-part {
+        justify-content: center;
+        gap: 10px;
+    }
+    .contacts-blok__section__container-part p {
+        font-size: 100%;
+    }
+    .contacts__icon {
+        font-size: 150%;
+    }
+    .contacts-footer__icon {
+        font-size: 300%;
+        padding: 10px;
+    }
+}

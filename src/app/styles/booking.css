@@ -1,0 +1,133 @@
+.booking {
+    padding: 0 10px 20px 0;
+    color: #fff;
+}
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    max-width: 300px;
+}
+
+.booking-blok {
+    display: flex;
+    justify-content: center;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    border: 1px solid var(--main-color);
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.booking-form__section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.booking-form__section input {
+    font-size: 110%;
+    width: 250px;
+    padding: 5px 10px;
+    outline: none;
+    border: 1px solid var(--main-color);
+    background-color: #fff;
+    color: #000;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--brown-color) inset;
+    -webkit-text-fill-color: #fff;
+    /* Цвет текста остается прежним */
+}
+
+.booking-form__section input::placeholder {
+    color: #000;
+}
+
+.booking-form__section-part {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
+
+.booking-form button {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+    font-size: 110%;
+    padding: 5px;
+    cursor: pointer;
+    transition: .5s;
+    border: none;
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.booking-form button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.booking__date {
+    color: #fff;
+}
+
+.booking__date::placeholder {
+    color: #fff;
+}
+
+.booking__time {
+    color: #fff;
+}
+
+.booking__time::placeholder {
+    color: #fff;
+}
+
+@media (max-width: 720px) {
+    
+    .booking-form {
+        gap: 35px;
+    }
+
+    .booking-form__section {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .booking-form {
+        align-items: center;
+    }
+
+    .error-text {
+        width: 100%;
+    }
+
+    .booking-form__section-part {
+        display: flex;
+        flex-direction: column;
+        min-height: 30px;
+    }
+
+    .booking-form button {
+        margin-top: 0px;
+        width: 250px;
+    }
+
+    .booking__email {
+        margin-top: 30px;
+    }
+
+    .booking__time {
+        margin-top: 30px;
+    }
+}

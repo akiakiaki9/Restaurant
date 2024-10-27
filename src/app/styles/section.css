@@ -1,0 +1,79 @@
+.section {
+    padding: 50px 10px;
+    background: var(--dark-color);
+}
+
+.section-blok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-blok__section {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.section-image {
+    width: 350px;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out; /* Добавляем плавный переход для фильтра */
+}
+
+.section-info {
+    position: absolute;
+    bottom: 0; /* Выравниваем текст снизу */
+    left: 50%;
+    transform: translate(-50%, 100%); /* Начальная позиция текста внизу */
+    color: white;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out; /* Плавный переход для поднятия текста */
+    text-align: center;
+}
+
+.section-blok__section:hover .section-info {
+    transform: translate(-50%, -20%); /* Поднимаем текст в центр при наведении */
+}
+
+.section-info h1 {
+    font-size: 250%;
+}
+
+.section-info h4 {
+    font-size: 110%;
+}
+
+/* Добавляем эффект затемнения при наведении */
+.section-blok__section:hover .section-image {
+    transform: scale(1.1);
+    filter: brightness(0.5); /* Затемняем изображение */
+}
+
+/* Мобильная версия */
+@media (max-width: 828px) {
+
+    .section-blok {
+        flex-direction: column;
+    }
+
+    /* Убираем hover эффект на мобильных устройствах */
+    .section-blok__section:hover .section-info {
+        transform: translate(-50%, 100%);
+    }
+}
+
+@media (max-width: 750px) {
+    .section h1 {
+        font-size: 220%;
+    }
+}
+
+@media (max-width: 482px) {
+    .section-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+}
