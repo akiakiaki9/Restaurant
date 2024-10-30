@@ -26,7 +26,7 @@ export async function generateMetadata() {
 }
 
 export default async function Gallery() {
-    const res = await fetch('http://127.0.0.1:8000/api/v1/gallery');
+    const res = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/gallery');
 
     if (!res.ok) {
         throw new Error('Ошибка при получении данных');
