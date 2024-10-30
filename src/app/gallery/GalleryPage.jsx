@@ -23,7 +23,7 @@ export default function GalleryPage({ data }) {
 
     const downloadImage = (id) => {
         // Отправляем запрос на /get-image/{id}
-        fetch(`http://127.0.0.1:8000/api/v1/get-image/${id}`)
+        fetch(`https://restaurant-booking-system-production.up.railway.app/api/v1/get-image/${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Ошибка при загрузке изображения');

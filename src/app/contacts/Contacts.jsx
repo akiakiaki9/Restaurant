@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";

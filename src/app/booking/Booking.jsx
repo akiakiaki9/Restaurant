@@ -108,7 +108,7 @@ export default function BookingPage() {
     const csrfToken = getCookie('csrftoken');
 
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/v1/booking-form', {
+      const res = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/booking-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,10 +1,11 @@
 import React from 'react';
 import HeaderPage from './HeaderPage';
+import NoneData from '../NoneData';
 
 export default async function Header() {
     try {
         // Запрос к первому API
-        const res1 = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/layout');
+        const res1 = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/contacts');
         if (!res1.ok) {
             throw new Error('Ошибка при получении данных от Layout');
         }
@@ -30,6 +31,6 @@ export default async function Header() {
         );
     } catch (error) {
         console.error('Ошибка при запросе данных:', error);
-        return <div>Не удалось загрузить данные для заголовка.</div>;
+        return <div> <NoneData /> </div>;
     }
 }

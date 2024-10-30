@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -42,7 +43,7 @@ export default function FooterPage({ data }) {
                 <br /><br />
                 <div>
                   <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
-                  <Link href={`mailto:${item.media_links.find(link => link.messanger === 'email').link}`} className="footer-blok__section-container__link">Email</Link>
+                  <a href="" className="footer-blok__section-container__link">Email</a>
                 </div>
                 <div>
                   <MdKeyboardArrowRight className="footer-blok__section-container__icon" />
@@ -79,4 +80,4 @@ export default function FooterPage({ data }) {
       </div>
     </div>
   )
-}
+};

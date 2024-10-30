@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import NewsPage from './NewsPage';
+import NoneData from '../components/NoneData';
+import Title from '../components/Title';
 
 export default function News() {
     const [data, setData] = useState([]);
@@ -44,14 +46,17 @@ export default function News() {
             {loading ? (
                 <p>Загрузка...</p>
             ) : error ? (
-                <p>Ошибка: {error}</p>
+                <div>
+                    <Title />
+                    <NoneData />
+                </div>
             ) : (
                 <NewsPage data={data} page={page} />
             )}
-            
+
             <div className="pagination">
-                <button 
-                    onClick={() => handlePageClick(page - 1)} 
+                <button
+                    onClick={() => handlePageClick(page - 1)}
                     disabled={page === 1}
                 >
                     Предыдущая
@@ -59,13 +64,13 @@ export default function News() {
 
                 {page > 2 && <button onClick={() => handlePageClick(1)}>1</button>}
                 {page > 3 && <span>...</span>}
-                
+
                 {Array.from({ length: totalPages }, (_, index) => {
                     const pageNumber = index + 1;
                     // Показываем номера страниц, если они близки к текущей
                     if (pageNumber >= page - 1 && pageNumber <= page + 1) {
                         return (
-                            <button 
+                            <button
                                 key={pageNumber}
                                 className={page === pageNumber ? 'active' : ''}
                                 onClick={() => handlePageClick(pageNumber)}
@@ -81,9 +86,9 @@ export default function News() {
                 {page < totalPages - 1 && (
                     <button onClick={() => handlePageClick(totalPages)}>{totalPages}</button>
                 )}
-                
-                <button 
-                    onClick={() => handlePageClick(page + 1)} 
+
+                <button
+                    onClick={() => handlePageClick(page + 1)}
                     disabled={page === totalPages}
                 >
                     Следующая
