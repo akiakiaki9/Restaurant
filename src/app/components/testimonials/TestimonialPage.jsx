@@ -41,9 +41,9 @@ export default function TestimonialPage({ data }) {
                 ) : (
                     data.map((item) => (
                         <div key={item.id} className="testimonials-blok__section">
-                            <h3 className="testimonials__title">{item.name}</h3>
+                            <h3 className="testimonials__title">{item.full_name}</h3>
                             <p className="testimonials__description">- {item.description}</p>
-                            <img src={item.image} alt={item.title} className="testimonial-image" />
+                            <img src={item.image} alt={item.full_name} className="testimonial-image" />
                         </div>
                     ))
                 )}
