@@ -4,8 +4,8 @@ import { LuPhone } from "react-icons/lu";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaFacebookF, FaTelegramPlane, FaInstagram } from 'react-icons/fa';
-import YandexGo from '../components/yandex/yandexgo';
 import NoneData from '../components/NoneData';
+import YandexGo from '../components/yandex/yandexgo';
 
 export default function ContactsPage({ data }) {
   return (

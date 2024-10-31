@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, act } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -21,22 +21,6 @@ export default function Navbar() {
   const handleLinkClick = (path) => {
     setIsOpen(false);
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.05) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <nav className={`navbar ${isSticky ? 'sticky' : ''}`}>
@@ -68,12 +52,13 @@ export default function Navbar() {
           Новости
         </Link>
         <Link href="/booking">
-          <button className="book-button" onClick={() => handleLinkClick('/booking')}>
+          <button className="book-button" onClick={() => handleLinkClick('/booking')}
+            style={{ backgroundColor: activePage === '/booking' ? 'var(--main-color)' : '', color: activePage === '/booking' ? '#fff' : '' }}
+          >
             Бронируй
           </button>
         </Link>
       </div>
-
       {isOpen && <div className="overlay" onClick={toggleMenu} />}
     </nav>
   );

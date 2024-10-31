@@ -1,19 +1,34 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import YandexGoPage from './YandexGoPage';
 
-export default async function YandexGo() {
-    // Получение данных с сервера
-    const res = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/contacts');
+export default function YandexGo() {
+    const [data, setData] = useState([]);
 
-    if (!res.ok) {
-        throw new Error('Ошибка при получении данных');
-    }
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const res = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/contacts');
+                if (!res.ok) throw new Error(`Ошибка сервера: ${res.status}`);
 
-    const data = await res.json();
+                const result = await res.json();
+
+                if (Array.isArray(result) && result.length > 0) {
+                    setData(result);
+                } else {
+                    console.error('Ответ API пустой или неправильный формат:', result);
+                }
+            } catch (error) {
+                console.error('Ошибка сети или получения данных:', error);
+            }
+        }
+
+        fetchData();
+    }, []);
 
     return (
         <div>
             <YandexGoPage data={data} />
         </div>
     );
-}
+};

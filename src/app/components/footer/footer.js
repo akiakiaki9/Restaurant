@@ -16,4 +16,4 @@ export default async function Footer() {
             <FooterPage data={data} />
         </div>
     )
-}
+};
