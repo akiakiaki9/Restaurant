@@ -55,7 +55,7 @@ export default function YandexGoPage({ data }) {
             </div>
           ) : (
             <div onClick={() => handleClickDesktop(item)} className="yandexgo-blok__section">
-              <img src="/images/yandexgo.png" alt="Яндекс Карты" />
+              <img src="/images/yandexmap.png" alt="Яндекс Карты" />
               <p>Открыть на Яндекс Картах</p>
             </div>
           )}
