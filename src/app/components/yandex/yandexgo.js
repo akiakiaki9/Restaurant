@@ -13,8 +13,13 @@ export default function YandexGo() {
 
                 const result = await res.json();
 
+                console.log('API response:', result);  // Выводим данные в консоль для проверки
+
                 if (Array.isArray(result) && result.length > 0) {
                     setData(result);
+                } else if (result && typeof result === 'object') {
+                    // Если результат - объект, конвертируем его в массив
+                    setData([result]);
                 } else {
                     console.error('Ответ API пустой или неправильный формат:', result);
                 }
