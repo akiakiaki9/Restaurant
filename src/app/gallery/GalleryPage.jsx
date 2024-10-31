@@ -21,24 +21,33 @@ export default function GalleryPage({ data }) {
         setIsOpen(false);
     };
 
-    const downloadImage = (id) => {
-        // Отправляем запрос на /get-image/{id}
-        fetch(`https://restaurant-booking-system-production.up.railway.app/api/v1/get-image/${id}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Ошибка при загрузке изображения');
-                }
-                return response.blob();
-            })
-            .then(blob => {
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.setAttribute('download', `image_${id}.jpg`);
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            })
-            .catch(error => console.error('Ошибка при скачивании изображения', error));
+    const downloadImage = async (id) => {
+        try {
+            const response = await fetch(`https://restaurant-booking-system-production.up.railway.app/api/v1/get-image/${id}`);
+            if (!response.ok) {
+                console.error('Ошибка при загрузке изображения:', response.status, response.statusText);
+                return;
+            }
+    
+            const blob = await response.blob();
+            const url = URL.createObjectURL(blob);
+    
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', `image_${id}.jpg`);
+            link.style.display = 'none'; // Скрываем ссылку
+            document.body.appendChild(link);
+    
+            link.click(); // Симулируем клик для скачивания
+            link.remove(); // Удаляем ссылку после клика
+    
+            // Очищаем объект URL для предотвращения утечек памяти
+            URL.revokeObjectURL(url);
+    
+            console.log('Изображение скачано успешно');
+        } catch (error) {
+            console.error('Ошибка при скачивании изображения', error);
+        }
     };
 
     const breakpointColumnsObj = {
@@ -77,6 +86,7 @@ export default function GalleryPage({ data }) {
                 <div className="carousel-overlay">
                     <button className="close-button" onClick={closeCarousel}>×</button>
                     <button
+                        type="button"
                         className="download-button"
                         onClick={() => downloadImage(data[currentSlide].id)} // Используем id открытой фотографии
                     >
@@ -117,4 +127,4 @@ export default function GalleryPage({ data }) {
             )}
         </div>
     );
-}
+};

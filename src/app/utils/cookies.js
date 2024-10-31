@@ -7,9 +7,12 @@ export function getCookie(name) {
             // Проверяем, начинается ли кука с нужного имени
             if (cookie.substring(0, name.length + 1) === (name + '=')) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                console.log(`Cookie found: ${name}=${cookieValue}`); // Логируем значение куки
                 break;
             }
         }
+    } else {
+        console.warn('Cookies are empty or not available');
     }
     return cookieValue;
 }
