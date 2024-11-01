@@ -1,61 +1,59 @@
-// app/confirm/[token]/page.js
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+'use client';
+
+import { useEffect, useState } from 'react';
+import ConfirmEmail from '@/app/components/ConfirmEmail';
 import ConfirmedEmail from '@/app/components/ConfirmedEmail';
 
-const ConfirmEmailPage = ({ params }) => {
-    const router = useRouter();
+export default function ConfirmPage({ params }) {
     const { token } = params;
-    const [isLoading, setIsLoading] = useState(true);
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
+    const [isConfirmed, setIsConfirmed] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        const confirmEmail = async (token) => {
-            try {
-                const res = await fetch(`https://restaurant-booking-system-production.up.railway.app/api/v1/confirm/${token}`, {
-                    method: 'GET',
-                });
-
-                if (!res.ok) {
-                    throw new Error('Ошибка при подтверждении email');
-                }
-
-                setIsSuccess(true); // Успешное подтверждение
-            } catch (error) {
-                setErrorMessage('Произошла ошибка при подтверждении почты.');
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        // Подтверждение email при загрузке страницы
-        confirmEmail(token);
+        if (token) {
+            confirmEmail(token);
+        }
     }, [token]);
 
-    const handleRedirect = () => {
-        router.push('/booking'); // Перенаправление на страницу бронирования
+    const confirmEmail = async (token) => {
+        try {
+            const res = await fetch(`https://restaurant-booking-system-production.up.railway.app/confirm/${token}`, {
+                method: 'POST', // Измените метод на POST
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ token }), // Отправляем токен в теле запроса
+            });
+
+            if (!res.ok) {
+                throw new Error('Ошибка при подтверждении email');
+            }
+
+            const data = await res.json();
+
+            if (data.confirmed) {
+                setIsConfirmed(true);
+            } else {
+                throw new Error('Email не подтверждён.');
+            }
+        } catch (error) {
+            console.error('Ошибка при подтверждении почты:', error);
+            setError('Ошибка при подтверждении почты.');
+        }
     };
 
-    if (isLoading) {
-        return <p>Подождите, идет подтверждение...</p>;
-    }
-
     return (
-        <div>
-            {isSuccess ? (
-                <div>
+        <div className='pagename1'>
+            <div className="pagename1-blok">
+                <h1>Подтверждение почты</h1>
+            </div>
+            <div className='booking'>
+                {isConfirmed ? (
                     <ConfirmedEmail />
-                </div>
-            ) : (
-                <div>
-                    <h1>Ошибка подтверждения</h1>
-                    <p>{errorMessage}</p>
-                    <button onClick={handleRedirect}>Перейти к бронированию</button>
-                </div>
-            )}
+                ) : (
+                    <ConfirmEmail />
+                )}
+            </div>
         </div>
     );
 };
-
-export default ConfirmEmailPage;
