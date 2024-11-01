@@ -26,7 +26,9 @@ export async function generateMetadata() {
 }
 
 export default async function Gallery() {
-    const res = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/gallery');
+    const res = await fetch('https://restaurant-booking-system-production.up.railway.app/api/v1/gallery', {
+        cache: 'no-store'
+    });
 
     if (!res.ok) {
         throw new Error('Ошибка при получении данных');
