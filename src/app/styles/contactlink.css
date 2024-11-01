@@ -38,6 +38,12 @@
 @media (max-width: 700px) {
 
     .contactlink {
+        background-attachment: local;
+        background-position: center;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.192), rgba(0, 0, 0, 0.07)), url('/images/contact-link.jpg');
+    }
+
+    .contactlink {
         height: 40vh;
     }
 
