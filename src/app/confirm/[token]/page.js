@@ -17,7 +17,7 @@ export default function ConfirmPage({ params }) {
 
     const confirmEmail = async (token) => {
         try {
-            const res = await fetch(`https://restaurant-booking-system-production.up.railway.app/confirm/${token}`, {
+            const res = await fetch(`https://restaurant-booking-system-production.up.railway.app/api/v1/confirm/${token}`, {
                 method: 'POST', // Измените метод на POST
                 headers: {
                     'Content-Type': 'application/json',
