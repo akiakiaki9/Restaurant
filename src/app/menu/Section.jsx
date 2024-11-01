@@ -49,7 +49,7 @@ export default function Section({ data }) {
     // Функция для открытия PDF
     const openPdf = (pdfUrl) => {
         window.open(pdfUrl, '_blank', 'noopener,noreferrer');  // Открываем PDF в новой вкладке
-    };
+    };    
 
     return (
         <div className="section" ref={sectionRef}>
