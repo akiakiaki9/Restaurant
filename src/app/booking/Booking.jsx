@@ -51,7 +51,7 @@ export default function BookingPage() {
 
   const confirmEmail = async (token) => {
     try {
-      const res = await fetch(`https://restaurant-booking-system-production.up.railway.app/api/v1/confirm/${token}`, {
+      const res = await fetch(` https://restaurant-ferro-soft.netlify.app/confirm.app/confirm/${token}`, {
         method: 'GET',
       });
 
