@@ -1,8 +1,9 @@
 'use client';
 import React, { useState, useEffect, act } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { RiMenu3Fill } from "react-icons/ri";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className={`menu-icon ${isOpen ? 'hidden' : ''}`} onClick={toggleMenu}>
-        <FaBars />
+        <RiMenu3Fill />
       </div>
       <div className={`menu-links ${isOpen ? 'active' : ''}`}>
         <div className="close-icon" onClick={toggleMenu}>
