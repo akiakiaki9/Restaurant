@@ -19,22 +19,22 @@
     width: 350px;
     height: 500px;
     object-fit: cover;
-    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out; /* Добавляем плавный переход для фильтра */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
 
 .section-info {
     position: absolute;
-    bottom: 0; /* Выравниваем текст снизу */
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, 100%); /* Начальная позиция текста внизу */
+    transform: translate(-50%, 100%);
     color: white;
     padding: 20px;
-    transition: transform 0.3s ease-in-out; /* Плавный переход для поднятия текста */
+    transition: transform 0.3s ease-in-out;
     text-align: center;
 }
 
 .section-blok__section:hover .section-info {
-    transform: translate(-50%, -20%); /* Поднимаем текст в центр при наведении */
+    transform: translate(-50%, -20%);
 }
 
 .section-info h1 {
@@ -50,22 +50,29 @@
     color: #fff;
 }
 
-/* Добавляем эффект затемнения при наведении */
 .section-blok__section:hover .section-image {
     transform: scale(1.1);
-    filter: brightness(0.5); /* Затемняем изображение */
+    filter: brightness(0.5);
 }
 
 /* Мобильная версия */
 @media (max-width: 828px) {
-
     .section-blok {
         flex-direction: column;
     }
 
-    /* Убираем hover эффект на мобильных устройствах */
-    .section-blok__section:hover .section-info {
-        transform: translate(-50%, 100%);
+    /* Отображаем текст по умолчанию и убираем эффекты при наведении */
+    .section-info {
+        transform: translate(-50%, 0);
+        background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный тёмный фон */
+        padding: 10px 15px; /* Добавляем отступы для улучшения читаемости */
+        border-radius: 8px; /* Закругляем углы */
+    }
+    
+    .section-blok__section:hover .section-info,
+    .section-blok__section:hover .section-image {
+        transform: none;
+        filter: none;
     }
 }
 
@@ -77,8 +84,8 @@
 
 @media (max-width: 482px) {
     .section-image {
-        width: 100%;
+        width: 300px;
         height: 250px;
         object-fit: cover;
     }
-}
+};

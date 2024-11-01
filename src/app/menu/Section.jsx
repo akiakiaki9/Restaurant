@@ -74,8 +74,6 @@ export default function Section({ data }) {
                                 {/* Для мобильной версии показываем при скролле, для ПК по наведению */}
                                 <div className={`section-info ${isMobile ? (isVisible ? 'visible' : '') : ''}`}>
                                     <h1>{item.title}</h1>
-                                    <h4>{item.subtitle}</h4>
-                                    <p>{item.description}</p>
                                     {/* Ссылка на PDF */}
                                     <a href={item.file} target="_blank" rel="noopener noreferrer">
                                         Открыть PDF
