@@ -61,7 +61,6 @@
         flex-direction: column;
     }
 
-    /* Отображаем текст по умолчанию и убираем эффекты при наведении */
     .section-info {
         transform: translate(-50%, 0);
         background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный тёмный фон */
