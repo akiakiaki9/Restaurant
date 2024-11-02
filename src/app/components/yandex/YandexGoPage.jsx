@@ -27,19 +27,20 @@ export default function YandexGoPage({ data }) {
       return;
     }
 
-    const yandexNavigatorUrl = `yandexnavi://build_route_on_map?lat_to=${latitude}&lon_to=${longitude}`;
+    // URL для вызова Яндекс Go с указанной точкой назначения
+    const yandexGoUrl = `yandexmaps://maps.yandex.ru/?rtext=${userLocation?.latitude},${userLocation?.longitude}~${latitude},${longitude}&rtt=auto`;
 
     if (/android/i.test(navigator.userAgent)) {
-      // Android: использование intent-схемы для открытия приложения или Google Play
-      const androidIntentUrl = `intent://build_route_on_map?lat_to=${latitude}&lon_to=${longitude}#Intent;scheme=yandexnavi;package=ru.yandex.yandexnavi;end`;
+      // Android: используем intent для проверки наличия Яндекс Go и открытия Google Play, если приложение не установлено
+      const androidIntentUrl = `intent://maps.yandex.ru/?rtext=${userLocation?.latitude},${userLocation?.longitude}~${latitude},${longitude}&rtt=auto#Intent;scheme=yandexmaps;package=ru.yandex.yandexmaps;end`;
       window.location.href = androidIntentUrl;
 
     } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      // iOS: попытка открыть приложение, если оно не установлено, перенаправление в App Store
+      // iOS: пробуем открыть приложение, если не получается, переходим в App Store
       setTimeout(() => {
-        window.location.href = `https://apps.apple.com/ru/app/id474500851`; // Ссылка на Яндекс Навигатор в App Store
+        window.location.href = `https://apps.apple.com/ru/app/id507897012`; // Ссылка на Яндекс Go в App Store
       }, 1000);
-      window.location.href = yandexNavigatorUrl;
+      window.location.href = yandexGoUrl;
     }
   };
 
@@ -63,7 +64,7 @@ export default function YandexGoPage({ data }) {
         <div key={item.id} className="yandexgo-blok">
           {isMobile ? (
             <div onClick={() => handleClickMobile(item)} className="yandexgo-blok__section">
-              <img src="/images/yandexgo.png" alt="Яндекс Навигатор" />
+              <img src="/images/yandexgo.png" alt="Яндекс Go" />
               <p>Вызвать Такси</p>
             </div>
           ) : (
