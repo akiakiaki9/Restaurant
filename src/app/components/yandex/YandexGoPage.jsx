@@ -26,8 +26,21 @@ export default function YandexGoPage({ data }) {
       console.error("Latitude or longitude is missing");
       return;
     }
+
     const yandexNavigatorUrl = `yandexnavi://build_route_on_map?lat_to=${latitude}&lon_to=${longitude}`;
-    window.location.href = yandexNavigatorUrl;
+
+    if (/android/i.test(navigator.userAgent)) {
+      // Android: использование intent-схемы для открытия приложения или Google Play
+      const androidIntentUrl = `intent://build_route_on_map?lat_to=${latitude}&lon_to=${longitude}#Intent;scheme=yandexnavi;package=ru.yandex.yandexnavi;end`;
+      window.location.href = androidIntentUrl;
+
+    } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      // iOS: попытка открыть приложение, если оно не установлено, перенаправление в App Store
+      setTimeout(() => {
+        window.location.href = `https://apps.apple.com/ru/app/id474500851`; // Ссылка на Яндекс Навигатор в App Store
+      }, 1000);
+      window.location.href = yandexNavigatorUrl;
+    }
   };
 
   const handleClickDesktop = (item) => {
