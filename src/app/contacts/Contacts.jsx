@@ -6,10 +6,25 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaFacebookF, FaTelegramPlane, FaInstagram } from 'react-icons/fa';
 import NoneData from '../components/NoneData';
 import YandexGo from '../components/yandex/yandexgo';
+import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function ContactsPage({ data }) {
+
+  const pathname = usePathname();
+  const router = useRouter();
+  const componentName = pathname ? pathname.replace('/', '') || 'Home' : '';
+
   return (
-    <div>
+    <div className='pagename1'>
+      <div className="pagename1-blok">
+        <h1>{componentName}</h1>
+        <p>
+          <Link href="/" className='pagename1-parent'>Home</Link>
+          <span className='pagename1-drop'>/</span>
+          <span className='pagename1-child'>{componentName}</span>
+        </p>
+      </div>
       {(!data || data.length === 0) ? (
         <NoneData />
       ) : (

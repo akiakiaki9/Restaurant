@@ -1,4 +1,3 @@
-import Title from '../components/Title';
 import ContactsPage from './Contacts';
 import { fetchSiteData } from '../fetchSiteData';
 
@@ -36,7 +35,6 @@ export default async function Contacts() {
 
     return (
         <div>
-            <Title />
             <ContactsPage data={data} />
         </div>
     );

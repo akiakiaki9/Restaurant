@@ -11,8 +11,8 @@ export default function Section({ data }) {
     const [isMobile, setIsMobile] = useState(false);  // Состояние для проверки мобильной версии
 
     const pathname = usePathname();
-  const router = useRouter();
-  const componentName = pathname ? pathname.replace('/', '') || 'Home' : '';
+    const router = useRouter();
+    const componentName = pathname ? pathname.replace('/', '') || 'Home' : '';
 
     // Проверка мобильной версии при монтировании компонента
     useEffect(() => {
