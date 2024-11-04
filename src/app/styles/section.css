@@ -6,7 +6,9 @@
 .section-blok {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 20px;
 }
 
 .section-blok__section {
@@ -16,10 +18,11 @@
 }
 
 .section-image {
-    width: 350px;
+    width: 300px;
     height: 500px;
     object-fit: cover;
     transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    border-radius: 7px;
 }
 
 .section-info {
@@ -34,7 +37,7 @@
 }
 
 .section-blok__section:hover .section-info {
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -120%);
 }
 
 .section-info h1 {
@@ -57,21 +60,23 @@
 
 /* Мобильная версия */
 @media (max-width: 828px) {
+
+    .section-image {
+        filter: brightness(.5);
+    }
+    
     .section-blok {
         flex-direction: column;
     }
 
     .section-info {
         transform: translate(-50%, 0);
-        background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный тёмный фон */
         padding: 10px 15px; /* Добавляем отступы для улучшения читаемости */
         border-radius: 8px; /* Закругляем углы */
     }
-    
-    .section-blok__section:hover .section-info,
-    .section-blok__section:hover .section-image {
-        transform: none;
-        filter: none;
+
+    .section-blok__section:hover .section-info {
+        transform: translate(-50%, 0)
     }
 }
 
