@@ -1,6 +1,6 @@
 .section {
     padding: 50px 10px;
-    background: var(--dark-color);
+    background: none;
 }
 
 .section-blok {

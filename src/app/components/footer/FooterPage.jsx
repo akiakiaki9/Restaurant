@@ -63,7 +63,9 @@ export default function FooterPage({ data }) {
               <b className="footer-blok__section__b">Связаться с нами</b>
               <br /><br />
               <p className="footer-blok__section-3__p">Адрес нашей улицы, {item.address}</p>
-              <p className="footer-blok__section-3__p"><b>Телефон:</b> {item.phone1}, {item.phone2}</p>
+              <p className="footer-blok__section-3__p">
+                <b>Телефон:</b> <a href={`tel:+${item.phone1}`}>+{item.phone1}</a>, <a href={`tel:+${item.phone2}`}>+{item.phone2}</a>
+              </p>
               <p className="footer-blok__section-3__p"><b>Email:</b> {item.media_links.find(link => link.messanger === 'email').link}</p>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import Section from './Section';
-import Title from '../components/Title';
 import { fetchSiteData } from '../fetchSiteData';
 
 export async function generateMetadata() {
@@ -36,7 +35,6 @@ export default async function Menu() {
 
     return (
         <div>
-            <Title />
             <Section data={data} />
         </div>
     );
