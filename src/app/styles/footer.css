@@ -51,8 +51,9 @@
     max-width: 300px;
 }
 
-.footer-blok__section-container {
-
+.footer-blok__section-3__p a {
+    text-decoration: none;
+    color: var(--main-color);
 }
 
 .footer-blok__section-container__icon {
