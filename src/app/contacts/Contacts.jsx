@@ -20,7 +20,7 @@ export default function ContactsPage({ data }) {
                 <div className="contacts-blok__section__container">
                   <div className="contacts-blok__section__container-part">
                     <LuPhone className='contacts__icon' />
-                    <p><a href={`tel:${item.phone}`}>{item.phone1}, {item.phone2}</a></p>
+                    <p><a href={`tel:+${item.phone1}`}>+{item.phone1}</a>, <a href={`tel:+${item.phone2}`}>+{item.phone2}</a></p>
                   </div>
                   <div className="contacts-blok__section__container-part">
                     <MdOutlineEmail className='contacts__icon' />
