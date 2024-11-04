@@ -77,7 +77,7 @@ export default function GalleryPage({ data }) {
                                 height={500}
                                 onClick={() => openCarousel(index)}
                                 placeholder="blur"
-                                blurDataURL="/images/noimage.jpg"
+                                onError={(e) => (e.target.src = "/images/noimage.jpg")}
                             />
                         </div>
                     ))}
