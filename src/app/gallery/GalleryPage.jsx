@@ -76,8 +76,6 @@ export default function GalleryPage({ data }) {
                                 width={500}
                                 height={500}
                                 onClick={() => openCarousel(index)}
-                                placeholder="blur"
-                                onError={(e) => (e.target.src = "/images/noimage.jpg")}
                             />
                         </div>
                     ))}
