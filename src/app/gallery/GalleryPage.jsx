@@ -28,22 +28,22 @@ export default function GalleryPage({ data }) {
                 console.error('Ошибка при загрузке изображения:', response.status, response.statusText);
                 return;
             }
-    
+
             const blob = await response.blob();
             const url = URL.createObjectURL(blob);
-    
+
             const link = document.createElement('a');
             link.href = url;
             link.setAttribute('download', `image_${id}.jpg`);
             link.style.display = 'none'; // Скрываем ссылку
             document.body.appendChild(link);
-    
+
             link.click(); // Симулируем клик для скачивания
             link.remove(); // Удаляем ссылку после клика
-    
+
             // Очищаем объект URL для предотвращения утечек памяти
             URL.revokeObjectURL(url);
-    
+
             console.log('Изображение скачано успешно');
         } catch (error) {
             console.error('Ошибка при скачивании изображения', error);
@@ -76,6 +76,8 @@ export default function GalleryPage({ data }) {
                                 width={500}
                                 height={500}
                                 onClick={() => openCarousel(index)}
+                                placeholder="blur"
+                                blurDataURL="/images/noimage.jpg"
                             />
                         </div>
                     ))}
