@@ -16,7 +16,7 @@
 
 .new-blok__container-1 img {
     width: 550px;
-    height: 250px;
+    height: auto;
     object-fit: cover;
 }
 
